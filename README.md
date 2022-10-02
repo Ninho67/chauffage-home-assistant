@@ -2,6 +2,7 @@
 
 Forked original blueprints to do the following modifications:
 * Changed `opening` to `window` to be consistent with existing binary sensors
+* Reversed control logic of the switch to heat by turning the switch `off` (instead of `on`)
 
 === ORIGINAL README ===
 
