@@ -102,22 +102,22 @@ action:
           - condition: template
             value_template: '{{puissance == 0}}'
         sequence:
-          - service: switch.turn_on
+          - service: switch.turn_off
             target:
               entity_id: !input entity_chauffage
       - conditions:
           - condition: template
             value_template: '{{ puissance > 99}}'
         sequence:
-          - service: switch.turn_off
+          - service: switch.turn_on
             target:
               entity_id: !input entity_chauffage
     default:
-      - service: switch.turn_off
+      - service: switch.turn_on
         target:
           entity_id: !input entity_chauffage
       - delay: '{{temps_chauffe}}'
-      - service: switch.turn_on
+      - service: switch.turn_off
         target:
           entity_id: !input entity_chauffage
 mode: restart
